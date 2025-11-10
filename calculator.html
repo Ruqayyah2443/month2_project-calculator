@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize/modern-normalize.css">
+    <link rel="stylesheet" href="style.css"> 
+
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left"> 
+                <p>Calculator </p>
+                <button id="dropdownBtn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="dropdown" class="dropdown-content">
+                    <button>
+                        <div class="btn-content">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <p>Currency Converter</p>
+                        </div>
+                    </button>
+                    <button>
+                        <div class="btn-content">
+                            <i class="fa-solid fa-hourglass-end"></i>
+                            <p>Scientific mode</p>
+                        </div>
+                    </button>
+                    <button>
+                        <div class="btn-content">
+                            <i class="fa-solid fa-ruler-horizontal"></i>
+                            <p>Length Converter</p>
+                        </div>
+                    </button>
+                    <button>
+                        <div class="btn-content">
+                            <i class="fa-solid fa-percent"></i>
+                            <p>Fraction</p>
+                        </div>
+                    </button>
+                </div>
+                
+                
+                <!-- <div id="dropdown" class="dropdown-content">
+                <button><i class="fa-solid fa-dollar-sign"></i> Currency Converter</button>
+                <button><i class="fa-solid fa-hourglass-end"></i>Scientific mode</button>
+                <button><i class="fa-solid fa-ruler-horizontal"></i>Length Converter</button>
+                <button><i class="fa-solid fa-percent"></i>Fraction</button> -->
+            </div>
+
+            
+            <button class="icon">🕓</button>
+        </div>
+
+        <div class="display">
+            <div id="input"></div>
+            <div id="result">0</div>
+        </div>
+
+        <div class="lowerPart">
+
+        
+            <div class="button">
+            
+                <button class="btn function clear">AC</button>
+                <button class="btn function">+/-</button>
+                <button class="btn function">%</button>
+                <button class="btn operator">÷</button>
+            
+                <button class="btn number">7</button>
+                <button class="btn number">8</button>
+                <button class="btn number">9</button>
+                <button class="btn operator">X</button>
+            
+
+            
+                <button class="btn number">4</button>
+                <button class="btn number">5</button>
+                <button class="btn number">6</button>
+                <button class="btn operator">-</button>
+           
+
+            
+                <button class="btn number"> 1</button>
+                <button class="btn number">2</button>
+                <button class="btn number">3</button>
+                <button class="btn operator">+</button>
+        
+                
+                <button class="btn number zero">0</button>
+                <button class="btn number">.</button>
+                <button class="btn delete">⌫</button>
+                <button class="btn equal">=</button>
+                
+            </div>
+            <div class="line"></div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
