@@ -6,6 +6,12 @@
     --accent-color: #4e7df2;
 }
 
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
 body{
     /* background-color: var(--bg-color); */
     display: flex;

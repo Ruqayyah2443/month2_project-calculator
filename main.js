@@ -3,7 +3,6 @@ const resultDisplay = document.getElementById("result")
 const buttons = document.querySelectorAll('.btn')
 
 let input = "";
-let lastResult = ""
 
 
 buttons.forEach(function (button){
@@ -22,7 +21,8 @@ buttons.forEach(function (button){
        else if(button.classList.contains("equal")){
         try{
             let inputExpression = input.replace(/x/g, '*').replace(/÷/g, '/');
-            resultDisplay.textContent = eval(inputExpression);lastResult = resultDisplay.textContent;
+            resultDisplay.textContent = eval(inputExpression);
+
 
         }catch(error){
             resultDisplay.textContent = "syntax Error"
