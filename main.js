@@ -1,3 +1,4 @@
+
 const inputDisplay = document.getElementById('input');
 const resultDisplay = document.getElementById("result")
 const buttons = document.querySelectorAll('.btn')
@@ -10,7 +11,6 @@ buttons.forEach(function (button){
        let value = button.textContent.trim()
        if (button.classList.contains('clear')){
         input = "";
-        lastResult = ""
         inputDisplay.textContent = "";
         resultDisplay.textContent = "";
        }
@@ -19,15 +19,25 @@ buttons.forEach(function (button){
         inputDisplay.textContent = input;
        } 
        else if(button.classList.contains("equal")){
-        try{
-            let inputExpression = input.replace(/x/g, '*').replace(/÷/g, '/');
-            resultDisplay.textContent = eval(inputExpression);
+        let inputExpression = input.replace(/x/g, '*').replace(/÷/g, '/');
+        let operators = inputExpression.match(/[\+\-\*\/]/);
+        let numbers = inputExpression.split(/[\+\-\*\/]/).map(Number);
 
-
-        }catch(error){
-            resultDisplay.textContent = "syntax Error"
+        if (!operators){
+            console.log("Result:", numbers[0]);
+            resultDisplay.textContent = numbers[0];
+        }else{
+           let result = numbers[0];
+        for (let i = 0; i < operators.length; i++) {
+            if (operators[i] === '+') result += numbers[i + 1];
+            else if (operators[i] === '-') result -= numbers[i + 1];
+            else if (operators[i] === '*') result *= numbers[i + 1];
+            else if (operators[i] === '/') result /= numbers[i + 1]; 
         }
-       } else {
+        console.log("Result:", result);
+        resultDisplay.textContent = result;
+        }
+    } else {
         input += value;
         inputDisplay.textContent = input;
        }
@@ -40,11 +50,4 @@ const dropdown = document.getElementById('dropdown');
 
 dropdownBtn.addEventListener('click', () => {
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-});
-
-// Close dropdown if clicked outside
-window.addEventListener('click', function(e) {
-    if (!dropdownBtn.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.style.display = 'none';
-    }
 });
