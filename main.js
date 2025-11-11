@@ -48,21 +48,13 @@ buttons.forEach(function (button){
             else if (operators[i] === '/') result /= numbers[i + 1]; 
         }
         resultDisplay.textContent = result;
-         input = result.toString(); 
+        input = result.toString(); 
         inputDisplay.textContent = input;
         } 
          
     } 
     
-        else if (value === '+/-'){
-            if (input !== ""){
-                if (input.startsWith('-')){
-                    input = input.slice(1)
-                }else {
-                    input = '-' + input;
-                }
-            } inputDisplay.textContent = input;
-        }
+        
 
         else if (button.classList.contains('percent')){
             if (input !== ""){
